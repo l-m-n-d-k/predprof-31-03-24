@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        td.yellow {
+            background-color: rgb(255, 230, 0);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th colspan="6">Дата (25 января 2023 года)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="4" colspan="6"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Входные данные</td>
+            <td colspan="4">Ответ</td>
+          </tr>
+          <tr>
+            <td>Количество комнат на этаже:</td>
+            <td>{{floor_count}}</td>
+            <td rowspan="3" colspan="4">Количество комнат: {{rooms_count}}<br>Номера комнат: {{rooms_nums}}</td>
+          </tr>
+          <tr>
+            <td>Окна на этаже:</td>
+            <td>{{windows_for_rooms}}</td>
+          </tr>
+          <tr>
+            <td onclick="toggleColor(this)">1</td>
+            <td onclick="toggleColor(this)">2</td>
+            <td onclick="toggleColor(this)">3</td>
+            <td onclick="toggleColor(this)">4</td>
+            <td onclick="toggleColor(this)">5</td>
+            <td onclick="toggleColor(this)">6</td>
+          </tr>
+          <tr>
+            <td onclick="toggleColor(this)">7</td>
+            <td onclick="toggleColor(this)">8</td>
+            <td onclick="toggleColor(this)">9</td>
+            <td onclick="toggleColor(this)">10</td>
+            <td onclick="toggleColor(this)">11</td>
+            <td onclick="toggleColor(this)">12</td>
+          </tr>
+          <tr>
+            <td onclick="toggleColor(this)">13</td>
+            <td onclick="toggleColor(this)">14</td>
+            <td onclick="toggleColor(this)">15</td>
+            <td onclick="toggleColor(this)">16</td>
+            <td onclick="toggleColor(this)">17</td>
+            <td onclick="toggleColor(this)">18</td>
+          </tr>
+          <tr>
+            <td onclick="toggleColor(this)">19</td>
+            <td onclick="toggleColor(this)">20</td>
+            <td onclick="toggleColor(this)">21</td>
+            <td onclick="toggleColor(this)">22</td>
+            <td onclick="toggleColor(this)">23</td>
+            <td onclick="toggleColor(this)">24</td>
+          </tr>
+        </tbody>
+      </table>
+    
+</body>
+</html>
