@@ -15,38 +15,52 @@
         td.yellow {
             background-color: yellow;
         }
+        .clickable {
+            cursor: pointer;
+        }
+        .clicked {
+            color: yellow;
+        }
     </style>
+    <script>
+        function toggleColor(element) {
+            element.classList.toggle("clicked");
+        }
+    </script>
 </head>
 <body>
     <table>
         <thead>
           <tr>
-            <th colspan="8">Дата (25 января 2023 года)</th>
+            <th colspan="6">Дата (25 января 2023 года)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td rowspan="4" colspan="6"></td>
+          </tr>
+          <tr>
             <td colspan="2">Входные данные</td>
-            <td colspan="6">Ответ</td>
+            <td colspan="4">Ответ</td>
           </tr>
           <tr>
             <td>Количество комнат на этаже:</td>
             <td>3</td>
-            <td colspan="6">Количество комнат: 8<br>Номера комнат: 1, 2, 4, 6, 7, 8, 11, 12</td>
+            <td rowspan="3" colspan="4">Количество комнат: 8<br>Номера комнат: <span class="clickable" onclick="toggleColor(this)">1</span>, <span class="clickable" onclick="toggleColor(this)">2</span>, 4, 6, 7, 8, 11, 12</td>
           </tr>
           <tr>
             <td>Окна на этаже:</td>
             <td>3, 2, 1</td>
-            <td>1</td>
-            <td>2</td>
+          </tr>
+          <tr>
+            <td><span class="clickable" onclick="toggleColor(this)">1</span></td>
+            <td><span class="clickable" onclick="toggleColor(this)">2</span></td>
             <td>3</td>
             <td>4</td>
             <td>5</td>
             <td>6</td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
             <td>7</td>
             <td>8</td>
             <td>9</td>
@@ -55,8 +69,6 @@
             <td>12</td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
             <td>13</td>
             <td>14</td>
             <td>15</td>
@@ -65,8 +77,6 @@
             <td>18</td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
             <td>19</td>
             <td>20</td>
             <td>21</td>
@@ -79,4 +89,3 @@
     
 </body>
 </html>
-
