@@ -1,30 +1,48 @@
-<table>
-  <thead>
-    <tr>
-      <th colspan="6">Дата (25 января 2023 года)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="4" colspan="6" style="background-color: lightgray;"></td>
-    </tr>
-    <tr>
-      <td colspan="2">Входные данные</td>
-      <td colspan="4">Ответ</td>
-    </tr>
-    <tr>
-      <td>Количество комнат на этаже:</td>
-      <td>3</td>
-      <td rowspan="2" colspan="4" style="background-color: yellow;">Выбранные комнаты</td>
-    </tr>
-    <tr>
-      <td>Окна на этаже:</td>
-      <td>3, 2, 1</td>
-    </tr>
-    <tr>
-      <td colspan="2">Количество комнат:</td>
-      <td>8</td>
-      <td colspan="4">Номера комнат: 1, 2, 4, 6, 7, 8, 11, 12</td>
-    </tr>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        td.yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th colspan="6">Дата (25 января 2023 года)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="4" colspan="6"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Входные данные</td>
+            <td colspan="4">Ответ</td>
+          </tr>
+          <tr>
+            <td>Количество комнат на этаже:</td>
+            <td>3</td>
+            <td rowspan="3" colspan="4">Количество комнат: 8<br>Номера комнат: 1, 2, 4, 6, 7, 8, 11, 12</td>
+          </tr>
+          <tr>
+            <td>Окна на этаже:</td>
+            <td>3, 2, 1</td>
+          </tr>
+        </tbody>
+      </table>
+    
+</body>
+</html>
