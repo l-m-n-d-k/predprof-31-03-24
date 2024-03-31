@@ -23,6 +23,42 @@
             } else {
                 element.style.backgroundColor = 'yellow';
             }
+            
+            var table = document.querySelector('table');
+            var rows = table.rows;
+            var rowCount = rows.length;
+            var columnCount = rows[0].cells.length;
+            
+            var roomCount = parseInt(document.getElementById('roomCount').textContent);
+            var windows = document.getElementById('windows').textContent.split(',').map(Number);
+            
+            var newTable = [];
+            var currentRow = [];
+            var currentWindowIndex = 0;
+            
+            for (var i = 0; i < rowCount - 1; i++) {
+                for (var j = 0; j < columnCount; j++) {
+                    if (i % roomCount === 0 && j % roomCount === 0) {
+                        currentRow = [];
+                        currentWindowIndex = 0;
+                    }
+                    
+                    if (i % roomCount === 0) {
+                        currentWindowIndex++;
+                    }
+                    
+                    var cellValue = (currentWindowIndex <= windows.length) ? windows[currentWindowIndex - 1] : '';
+                    currentRow.push(cellValue);
+                }
+                
+                newTable.push(currentRow);
+            }
+            
+            for (var i = 0; i < rowCount - 1; i++) {
+                for (var j = 0; j < columnCount; j++) {
+                    rows[i + 1].cells[j].textContent = newTable[i][j];
+                }
+            }
         }
     </script>
 </head>
@@ -43,12 +79,12 @@
           </tr>
           <tr>
             <td>Количество комнат на этаже:</td>
-            <td>3</td>
+            <td id="roomCount">3</td>
             <td rowspan="3" colspan="4">Количество комнат: 8<br>Номера комнат: 1, 2, 4, 6, 7, 8, 11, 12</td>
           </tr>
           <tr>
             <td>Окна на этаже:</td>
-            <td>3, 2, 1</td>
+            <td id="windows">3, 2, 1</td>
           </tr>
           <tr>
             <td onclick="toggleColor(this)">1</td>
