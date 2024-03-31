@@ -44,8 +44,10 @@ for elem in floors_123:
 
 
 @app.route('/')
-@app.route('/index')
-def hello(floor_count=floor_count, windows_for_rooms=windows_for_rooms):
+@app.route('/index ?floor_count=floor_count&windows_for_rooms=windows_for_rooms')
+def hello():
+    floor_count = request.args.get('floor_count')
+    windows_for_rooms = request.args.get('windows_for_rooms')
     return render_template('index.html', 
                            floor_count=floor_count, 
                            windows_for_rooms=windows_for_rooms,
