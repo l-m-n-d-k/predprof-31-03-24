@@ -1,2 +1,2 @@
 # predprof-31-03-24
-dt.miet.ru
+https://dt.miet.ru/ppo_it/info/docs/case_final
