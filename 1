@@ -1,3 +1,4 @@
+
 top_reqparser = reqparse.RequestParser()
 message_reqparser = reqparse.RequestParser()
 date_reqparser = reqparse.RequestParser()
@@ -5,37 +6,27 @@ rooms_count_reqparser = reqparse.RequestParser()
 windows_for_rooms_reqparser = reqparse.RequestParser()
 windows_reqparser = reqparse.RequestParser()
 data_reqparser = reqparse.RequestParser()
-top_reqparser.add_argument('message', dest='message', type = dict, default={},
-                                            store_missing = False, location = 'json')
-message_reqparser.add_argument('date', dest='date', type = dict, default={},
-                                            store_missing = False, location = 'message')
-message_reqparser.add_argument('rooms_count', dest='rooms_count', type = dict, default={},
-                                            store_missing = False, location = 'message')
-message_reqparser.add_argument('windows_for_rooms', dest='windows_for_rooms', type = dict, default={},
-                                            store_missing = False, location = 'message')
-message_reqparser.add_argument('windows', dest='windows', type = dict, default={},
-                                            store_missing = False, location = 'message')
-date_reqparser.add_argument('data', type = int, default=0, store_missing = False,
-                                            help='Invaild param', location = 'date')
-date_reqparser.add_argument('description', type = str, default='', store_missing = False,
-                                            help='Invaild param', location = 'date')
-rooms_count_reqparser.add_argument('data', type = int, default=0, store_missing = False,
-                                            help='Invaild param', location = 'rooms_count')
-rooms_count_reqparser.add_argument('description', type = str, default='', store_missing = False,
-                                            help='Invaild param', location = 'rooms_count')
-windows_for_rooms_reqparser.add_argument('data', type = list, default=[], store_missing = False,
-                                            help='Invaild param', location = 'windows_for_rooms')
-windows_for_rooms_reqparser.add_argument('description', type = str, default='', store_missing = False,
-                                            help='Invaild param', location = 'windows_for_rooms')
-windows_reqparser.add_argument('data', type = dict, default={}, store_missing = False,
-                                            help='Invaild param', location = 'windows')
-windows_reqparser.add_argument('description', type = int, default=0, store_missing = False,
-                                            help='Invaild param', location = 'windows')
-data_reqparser.add_argument('floor_1', type = list, default=[], store_missing = False,
-                                            help='Invaild param', location = 'data')
-data_reqparser.add_argument('floor_2', type = list, default=[], store_missing = False,
-                                            help='Invaild param', location = 'data')
-data_reqparser.add_argument('floor_3', type = list, default=[], store_missing = False,
-                                            help='Invaild param', location = 'data')
-data_reqparser.add_argument('floor_4', type = list, default=[], store_missing = False,
-                                            help='Invaild param', location = 'data')
+
+top_reqparser.add_argument('message', dest='message', type=dict, default={}, store_missing=False, location='json')
+
+message_reqparser.add_argument('date', dest='date', type=dict, default={}, store_missing=False, location='message')
+message_reqparser.add_argument('rooms_count', dest='rooms_count', type=dict, default={}, store_missing=False, location='message')
+message_reqparser.add_argument('windows_for_rooms', dest='windows_for_rooms', type=dict, default={}, store_missing=False, location='message')
+message_reqparser.add_argument('windows', dest='windows', type=dict, default={}, store_missing=False, location='message')
+
+date_reqparser.add_argument('data', type=int, default=0, store_missing=False, help='Invalid param', location='date')
+date_reqparser.add_argument('description', type=str, default='', store_missing=False, help='Invalid param', location='date')
+
+rooms_count_reqparser.add_argument('data', type=int, default=0, store_missing=False, help='Invalid param', location='rooms_count')
+rooms_count_reqparser.add_argument('description', type=str, default='', store_missing=False, help='Invalid param', location='rooms_count')
+
+windows_for_rooms_reqparser.add_argument('data', type=list, default=[], store_missing=False, help='Invalid param', location='windows_for_rooms')
+windows_for_rooms_reqparser.add_argument('description', type=str, default='', store_missing=False, help='Invalid param', location='windows_for_rooms')
+
+windows_reqparser.add_argument('data', type=dict, default={}, store_missing=False, help='Invalid param', location='windows')
+windows_reqparser.add_argument('description', type=str, default='', store_missing=False, help='Invalid param', location='windows')
+
+data_reqparser.add_argument('floor_1', type=list, default=[], store_missing=False, help='Invalid param', location='data')
+data_reqparser.add_argument('floor_2', type=list, default=[], store_missing=False, help='Invalid param', location='data')
+data_reqparser.add_argument('floor_3', type=list, default=[], store_missing=False, help='Invalid param', location='data')
+data_reqparser.add_argument('floor_4', type=list, default=[], store_missing=False, help='Invalid param', location='data')
