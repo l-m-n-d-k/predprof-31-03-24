@@ -1,89 +1,30 @@
-import sqlite3
-import json
-
-# Load JSON data
-data = {
-    "date": {
-        "data": 1674594000,
-        "description": "Татьянин день"
-    },
-    "rooms_count": {
-        "data": 3,
-        "description": "Количество комнат на этаже"
-    },
-    "windows_for_room": {
-        "data": [
-            3,
-            2,
-            1
-        ],
-        "description": "Количество окон в каждой из комнат на этаже слева направо"
-    },
-    "windows": {
-        "data": {
-            "floor_1": [
-                False,
-                True,
-                False,
-                True,
-                False,
-                False
-            ],
-            "floor_2": [
-                True,
-                False,
-                True,
-                False,
-                False,
-                True
-            ],
-            "floor_3": [
-                False,
-                False,
-                True,
-                False,
-                True,
-                False
-            ],
-            "floor_4": [
-                False,
-                False,
-                False,
-                True,
-                False,
-                True
-            ]
-        },
-        "description": "Окна по этажам, в которых горит свет"
-    }
-}
-
-# Create SQLite database and table
-conn = sqlite3.connect('json_data.db')
-c = conn.cursor()
-c.execute('''CREATE TABLE IF NOT EXISTS json_data 
-             (date_data INTEGER, date_description TEXT, 
-             rooms_count_data INTEGER, rooms_count_description TEXT, 
-             windows_for_room_data TEXT, windows_for_room_description TEXT, 
-             windows_floor_1 TEXT, windows_floor_2 TEXT, windows_floor_3 TEXT, windows_floor_4 TEXT, 
-             windows_description TEXT)''')
-
-# Insert data from JSON
-c.execute('''INSERT INTO json_data 
-             (date_data, date_description, rooms_count_data, rooms_count_description, 
-             windows_for_room_data, windows_for_room_description, 
-             windows_floor_1, windows_floor_2, windows_floor_3, windows_floor_4, 
-             windows_description) 
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
-             (data['date']['data'], data['date']['description'], 
-             data['rooms_count']['data'], data['rooms_count']['description'], 
-             ', '.join(map(str, data['windows_for_room']['data'])), data['windows_for_room']['description'], 
-             ', '.join(map(str, data['windows']['floor_1'])), 
-             ', '.join(map(str, data['windows']['floor_2'])), 
-             ', '.join(map(str, data['windows']['floor_3'])), 
-             ', '.join(map(str, data['windows']['floor_4'])), 
-             data['windows']['description']))
-
-# Commit changes and close connection
-conn.commit()
-conn.close()
+<table>
+  <thead>
+    <tr>
+      <th colspan="6">Дата (25 января 2023 года)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4" colspan="6" style="background-color: lightgray;"></td>
+    </tr>
+    <tr>
+      <td colspan="2">Входные данные</td>
+      <td colspan="4">Ответ</td>
+    </tr>
+    <tr>
+      <td>Количество комнат на этаже:</td>
+      <td>3</td>
+      <td rowspan="2" colspan="4" style="background-color: yellow;">Выбранные комнаты</td>
+    </tr>
+    <tr>
+      <td>Окна на этаже:</td>
+      <td>3, 2, 1</td>
+    </tr>
+    <tr>
+      <td colspan="2">Количество комнат:</td>
+      <td>8</td>
+      <td colspan="4">Номера комнат: 1, 2, 4, 6, 7, 8, 11, 12</td>
+    </tr>
+  </tbody>
+</table>
